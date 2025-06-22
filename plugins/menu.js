@@ -1377,10 +1377,25 @@ const aliveMessage = await conn.sendMessage(from, {
                             }
                         }
                     }, { quoted: mek });
+                } else {
+                    await conn.sendMessage(from, {
+                        text: "*❌ Invalid Option!*\nPlease reply with a number between 1 and 13.",
+                        contextInfo: {
+                            mentionedJid: [sender]
+                        }
+                    }, { quoted: supunwa });
+                }
+            }
+        });
 
+    } catch (e) {
+        console.error("Error:", e);
+        reply(`*Oops! Something went wrong:*\n${e.message || e}`);
+    }
+});
 const botname = "KAVI MD"; //add your name
  const ownername = "Kavidu Rasanga"; // add your name
- const mek = { 
+ const supunwa = { 
  key: { 
   remoteJid: 'status@broadcast', 
   participant: '0@s.whatsapp.net' 
@@ -1393,20 +1408,4 @@ message:{
     inviteExpiration: 0
   }
  }
- }, { quoted: mek });
-                } else {
-                    await conn.sendMessage(from, {
-                        text: "*❌ Invalid Option!*\nPlease reply with a number between 1 and 13.",
-                        contextInfo: {
-                            mentionedJid: [sender]
-                        }
-                    }, { quoted: mek });
-                }
-            }
-        });
-
-    } catch (e) {
-        console.error("Error:", e);
-        reply(`*Oops! Something went wrong:*\n${e.message || e}`);
-    }
-});
+ }
