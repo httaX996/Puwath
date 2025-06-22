@@ -1376,11 +1376,11 @@ const aliveMessage = await conn.sendMessage(from, {
                                 serverMessageId: 999
                             }
                         }
-                    }, const mek = m;
+                    }, { quoted: mek });
 
 const botname = "KAVI MD"; //add your name
  const ownername = "Kavidu Rasanga"; // add your name
- const Supunwa = { 
+ const mek = { 
  key: { 
   remoteJid: 'status@broadcast', 
   participant: '0@s.whatsapp.net' 
