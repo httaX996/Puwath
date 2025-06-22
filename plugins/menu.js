@@ -2,6 +2,23 @@ const { cmd, commands } = require('../command');
 const os = require("os");
 const { runtime } = require('../lib/functions');
 
+const botname = "KAVI MD"; //add your name
+ const ownername = "Kavidu Rasanga"; // add your name
+ const Supunwa = { 
+ key: { 
+  remoteJid: 'status@broadcast', 
+  participant: '0@s.whatsapp.net' 
+   }, 
+message:{ 
+  newsletterAdminInviteMessage: { 
+    newsletterJid: '120363417070951702@newsletter', //add your channel jid
+    newsletterName: "MOVIE CIRCLE", //add your bot name
+    caption: botname + ` Verified By ` + ownername, 
+    inviteExpiration: 0
+  }
+ }
+ };
+
 cmd({
     pattern: "menu",
     alias: ["list", "cmd", "panel"],
@@ -1313,7 +1330,7 @@ const aliveMessage = await conn.sendMessage(from, {
                     showAdAttribution: true
                 }
             }
-        }, { quoted: mek });
+        }, { quoted: supunwa });
 
         // Send Main Menu Image and Caption
         const sentMsg = await conn.sendMessage(from, {
