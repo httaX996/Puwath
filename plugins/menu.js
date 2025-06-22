@@ -1411,19 +1411,3 @@ const aliveMessage = await conn.sendMessage(from, {
         reply(`*Oops! Something went wrong:*\n${e.message || e}`);
     }
 }); 
-const botname = "KAVI MD"; //add your name
- const ownername = "Kavidu Rasanga"; // add your name
- const Supunwa = { 
- key: { 
-  remoteJid: 'status@broadcast', 
-  participant: '0@s.whatsapp.net' 
-   }, 
-message:{ 
-  newsletterAdminInviteMessage: { 
-    newsletterJid: '120363417070951702@newsletter', //add your channel jid
-    newsletterName: "MOVIE CIRCLE", //add your bot name
-    caption: botname + ` Verified By ` + ownername, 
-    inviteExpiration: 0
-  }
- }
- }
