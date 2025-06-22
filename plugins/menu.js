@@ -1376,7 +1376,7 @@ const aliveMessage = await conn.sendMessage(from, {
                                 serverMessageId: 999
                             }
                         }
-                    }, { quoted: supunwa });
+                    }, const mek = m;
 
 const botname = "KAVI MD"; //add your name
  const ownername = "Kavidu Rasanga"; // add your name
