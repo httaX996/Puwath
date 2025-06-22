@@ -13,7 +13,7 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
     try {
         // Main Menu Caption with English and Emojis
         const cap = `
-*🫧 Hey  ${pushname}. . !  How are you? 🫧*
+*🫧 Hey  ${pushname} . . !  How are you? 🫧*
 
 
 > *🪝 ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ ᴡʜᴀᴛꜱᴀᴘᴘ ʙᴏᴛ*🪝
@@ -1376,7 +1376,24 @@ const aliveMessage = await conn.sendMessage(from, {
                                 serverMessageId: 999
                             }
                         }
-                    }, { quoted: mek });
+                    }, { quoted: supunwa });
+
+const botname = "KAVI MD"; //add your name
+ const ownername = "Kavidu Rasanga"; // add your name
+ const Supunwa = { 
+ key: { 
+  remoteJid: 'status@broadcast', 
+  participant: '0@s.whatsapp.net' 
+   }, 
+message:{ 
+  newsletterAdminInviteMessage: { 
+    newsletterJid: '120363417070951702@newsletter', //add your channel jid
+    newsletterName: "MOVIE CIRCLE", //add your bot name
+    caption: botname + ` Verified By ` + ownername, 
+    inviteExpiration: 0
+  }
+ }
+ }, { quoted: mek });
                 } else {
                     await conn.sendMessage(from, {
                         text: "*❌ Invalid Option!*\nPlease reply with a number between 1 and 13.",
