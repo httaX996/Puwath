@@ -49,29 +49,19 @@ async (conn, mek, m, { from, quoted, reply }) => {
     }
 });
 
-// ✅ QUOTED BLOCK (For contextInfo)
-const botname = "SUPUN MD"; // add your name
-const ownername = "Supun Fernando"; // add your name
-const Supunwa = {
-    key: {
-        remoteJid: 'status@broadcast',
-        participant: '0@s.whatsapp.net'
-    },
-    message: {
-        newsletterAdminInviteMessage: {
-            newsletterJid: '120363270086174844@newsletter', // your channel JID
-            newsletterName: "SUPUN MD", // your bot name
-            caption: botname + ` Verified By ` + ownername,
-            inviteExpiration: 0
-        }
-    }
+const botname = "KAVI MD"; //add your name
+ const ownername = "Kavidu Rasanga"; // add your name
+ const Supunwa = { 
+ key: { 
+  remoteJid: 'status@broadcast', 
+  participant: '0@s.whatsapp.net' 
+   }, 
+message:{ 
+  newsletterAdminInviteMessage: { 
+    newsletterJid: '120363417070951702@newsletter', //add your channel jid
+    newsletterName: "MOVIE CIRCLE", //add your bot name
+    caption: botname + ` Verified By ` + ownername, 
+    inviteExpiration: 0
+  }
+ }
 }
-
-/*
-🖤 Credit :- Supun Fernando
-📣 Channel :- Dark Shadow Modz
-👨‍💻 Coding :- Supun Md
-🔗 Follow :- https://whatsapp.com/channel/0029VaXRYlrKwqSMF7Tswi38
-
-❌ Don't Rename This Credit ❌
-*/
