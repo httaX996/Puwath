@@ -1321,23 +1321,6 @@ const Supunwa = {
   }
 };
 
-// Menu Texts
-const menus = {
-  menu1: "📁 *Menu 1 Content Here*",
-  menu2: "📁 *Menu 2 Content Here*",
-  menu3: "📁 *Menu 3 Content Here*",
-  menu4: "📁 *Menu 4 Content Here*",
-  menu5: "📁 *Menu 5 Content Here*",
-  menu6: "📁 *Menu 6 Content Here*",
-  menu7: "📁 *Menu 7 Content Here*",
-  menu8: "📁 *Menu 8 Content Here*",
-  menu9: "📁 *Menu 9 Content Here*",
-  menu10: "📁 *Menu 10 Content Here*",
-  menu11: "📁 *Menu 11 Content Here*",
-  menu12: "📁 *Menu 12 Content Here*",
-  menu13: "📁 *Menu 13 Content Here*"
-};
-
 try {
   const aliveMessage = await conn.sendMessage(from, {
     video: { url: `https://files.catbox.moe/koqonc.mp4` },
