@@ -55,14 +55,29 @@ cmd({
             mimetype: "video/mp4", 
             fileName: `${data.result.title}.mp4`, 
             caption: `*${yts.title}*\n> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ:- 𝙺𝙰𝚅𝙸𝙳𝚄 𝚁𝙰𝚂𝙰𝙽𝙶𝙰 🌟*`
-        }, { quoted: mek });
+        }, { quoted: supunwa });
 
     } catch (e) {
         console.log(e);
         reply("An error occurred. Please try again later.");
     }
 });  
-       
+const botname = "KAVI MD"; //add your name
+ const ownername = "Kavidu Rasanga"; // add your name
+ const Supunwa = { 
+ key: { 
+  remoteJid: 'status@broadcast', 
+  participant: '0@s.whatsapp.net' 
+   }, 
+message:{ 
+  newsletterAdminInviteMessage: { 
+    newsletterJid: '120363417070951702@newsletter', //add your channel jid
+    newsletterName: "MOVIE CIRCLE", //add your bot name
+    caption: botname + ` Verified By ` + ownername, 
+    inviteExpiration: 0
+  }
+ }
+ }      
 // play
 
 cmd({ 
@@ -118,7 +133,7 @@ const yt = await ytsearch(q);
         mimetype: "audio/mpeg", 
         fileName: `${data.result.title}.mp3`, 
         caption: `> *ᴘᴏᴡᴇʀᴇᴅ ʙʏ:- 𝙺𝙰𝚅𝙸𝙳𝚄 𝚁𝙰𝚂𝙰𝙽𝙶𝙰 🌟*`
-    }, { quoted: mek });
+    }, { quoted: supunwa });
 
 } catch (e) {
     console.log(e);
@@ -126,3 +141,19 @@ const yt = await ytsearch(q);
 }
 
 });
+const botname = "KAVI MD"; //add your name
+ const ownername = "Kavidu Rasanga"; // add your name
+ const Supunwa = { 
+ key: { 
+  remoteJid: 'status@broadcast', 
+  participant: '0@s.whatsapp.net' 
+   }, 
+message:{ 
+  newsletterAdminInviteMessage: { 
+    newsletterJid: '120363417070951702@newsletter', //add your channel jid
+    newsletterName: "MOVIE CIRCLE", //add your bot name
+    caption: botname + ` Verified By ` + ownername, 
+    inviteExpiration: 0
+  }
+ }
+ }
