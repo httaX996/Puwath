@@ -1297,122 +1297,116 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 `
         };
 
-// 🔰 Credit :- Supun Fernando
-// 🔰 Channel :- Dark Shadow Modz
-// 🔰 Coding :- Supun Md
-// 🔰 Follow :- https://whatsapp.com/channel/0029VaXRYlrKwqSMF7Tswi38
-// ❗ Don't Rename This Credit ❗
-
-// Define Supunwa (Quoted Message Info)
-const botname = "SUPUN MD"; // add your name
-const ownername = "Supun Fernando"; // add your name
-const Supunwa = {
-  key: {
-    remoteJid: 'status@broadcast',
-    participant: '0@s.whatsapp.net'
-  },
-  message: {
-    newsletterAdminInviteMessage: {
-      newsletterJid: '120363270086174844@newsletter', // add your channel jid
-      newsletterName: "SUPUN MD", // add your bot name
-      caption: botname + ` Verified By ` + ownername,
-      inviteExpiration: 0
-    }
-  }
-};
-
-try {
-  const aliveMessage = await conn.sendMessage(from, {
-    video: { url: `https://files.catbox.moe/koqonc.mp4` },
-    mimetype: "video/mp4",
-    ptv: true,
-    contextInfo: {
-      externalAdReply: {
-        title: "KAVI-MD",
-        body: "KAVIDU RASANGA",
-        mediaType: 1,
-        sourceUrl: "https://whatsapp.com/channel/0029Vb65vPA1Hsq4pXhLNo1I",
-        thumbnailUrl: "https://files.catbox.moe/sq9tvu.jpg",
-        renderLargerThumbnail: true,
-        showAdAttribution: true
-      }
-    }
-  }, { quoted: Supunwa }); // ✅ Use custom quoted
-
-  // Send Menu Image with Caption
-  const sentMsg = await conn.sendMessage(from, {
-    image: { url: "https://files.catbox.moe/sq9tvu.jpg" },
-    caption: cap,
-    contextInfo: {
-      mentionedJid: ['94762858448@s.whatsapp.net'],
-      forwardingScore: 1,
-      isForwarded: true,
-      forwardedNewsletterMessageInfo: {
-        newsletterJid: '120363417070951702@newsletter',
-        newsletterName: "🎬 𝐌𝐎𝐕𝐈𝐄 𝐂𝐈𝐑𝐂𝐋𝐄 🎬",
-        serverMessageId: 999
-      }
-    }
-  }, { quoted: Supunwa }); // ✅ Use custom quoted
-
-  const messageID = sentMsg.key.id;
-
-  // Menu Selector Listener
-  conn.ev.on('messages.upsert', async (messageUpdate) => {
-    const mek = messageUpdate.messages[0];
-    if (!mek.message) return;
-
-    const messageText = mek.message?.conversation || mek.message?.extendedTextMessage?.text;
-    if (!messageText) return;
-
-    const from = mek.key.remoteJid;
-    const sender = mek.key.participant || mek.key.remoteJid;
-    const isReplyToSentMsg = mek.message.extendedTextMessage &&
-      mek.message.extendedTextMessage.contextInfo.stanzaId === messageID;
-
-    if (isReplyToSentMsg) {
-      const selectedMenu = `menu${messageText.trim()}`;
-      const menuImages = {
-        '1': "https://files.catbox.moe/sq9tvu.jpg",
-        '2': "https://files.catbox.moe/sq9tvu.jpg",
-        '3': "https://files.catbox.moe/sq9tvu.jpg",
-        '4': "https://files.catbox.moe/sq9tvu.jpg",
-        '5': "https://files.catbox.moe/sq9tvu.jpg",
-        '6': "https://files.catbox.moe/sq9tvu.jpg",
-        '7': "https://files.catbox.moe/sq9tvu.jpg",
-        '8': "https://files.catbox.moe/sq9tvu.jpg",
-        '9': "https://files.catbox.moe/sq9tvu.jpg",
-        '10': "https://files.catbox.moe/sq9tvu.jpg",
-        '11': "https://files.catbox.moe/sq9tvu.jpg",
-        '12': "https://files.catbox.moe/sq9tvu.jpg",
-        '13': "https://files.catbox.moe/sq9tvu.jpg"
-      };
-
-      if (menus[selectedMenu]) {
-        await conn.sendMessage(from, {
-          image: { url: menuImages[messageText.trim()] },
-          caption: menus[selectedMenu],
-          contextInfo: {
-            mentionedJid: ['94762858448@s.whatsapp.net'],
-            forwardingScore: 1,
-            isForwarded: true,
-            forwardedNewsletterMessageInfo: {
-              newsletterJid: '120363417070951702@newsletter',
-              newsletterName: "🎬 𝐌𝐎𝐕𝐈𝐄 𝐂𝐈𝐑𝐂𝐋𝐄 🎬",
-              serverMessageId: 999
+    
+const aliveMessage = await conn.sendMessage(from, { 
+            video: { url: `https://files.catbox.moe/koqonc.mp4` }, 
+            mimetype: "video/mp4",
+            ptv: true,
+            contextInfo: {
+                externalAdReply: {
+                    title: "KAVI-MD",
+                    body: "KAVIDU RASANGA",
+                    mediaType: 1,
+                    sourceUrl: "https://whatsapp.com/channel/0029Vb65vPA1Hsq4pXhLNo1I",
+                    thumbnailUrl: "https://files.catbox.moe/sq9tvu.jpg",
+                    renderLargerThumbnail: true,
+                    showAdAttribution: true
+                }
             }
-          }
-        }, { quoted: Supunwa });
-      } else {
-        await conn.sendMessage(from, {
-          text: "*❌ Invalid Option!*\nPlease reply with a number between 1 and 13.",
-          contextInfo: { mentionedJid: [sender] }
-        }, { quoted: Supunwa });
-      }
-    }
-  });
+        }, { quoted: mek });
 
-} catch (e) {
-  console.error("Error:", e);
-  reply(`*Oops! Something went wrong:*\n${e.message || e}`);
-}
+        // Send Main Menu Image and Caption
+        const sentMsg = await conn.sendMessage(from, {
+            image: { url: "https://files.catbox.moe/sq9tvu.jpg" },
+            caption: cap,
+            contextInfo: {
+                mentionedJid: ['94762858448@s.whatsapp.net'],
+                groupMentions: [],
+                forwardingScore: 1,
+                isForwarded: true,
+                forwardedNewsletterMessageInfo: {
+                    newsletterJid: '120363417070951702@newsletter',
+                    newsletterName: "🎬 𝐌𝐎𝐕𝐈𝐄 𝐂𝐈𝐑𝐂𝐋𝐄 🎬",
+                    serverMessageId: 999
+                }
+            }
+        }, { quoted: mek });
+
+        const messageID = sentMsg.key.id;
+
+        // Handle Menu Selection
+        conn.ev.on('messages.upsert', async (messageUpdate) => {
+            const mek = messageUpdate.messages[0];
+            if (!mek.message) return;
+
+            const messageType = mek.message.conversation || mek.message.extendedTextMessage?.text;
+            const from = mek.key.remoteJid;
+            const sender = mek.key.participant || mek.key.remoteJid;
+
+            const isReplyToSentMsg = mek.message.extendedTextMessage && mek.message.extendedTextMessage.contextInfo.stanzaId === messageID;
+            if (isReplyToSentMsg) {
+                const menuImages = {
+                    '1': "https://files.catbox.moe/sq9tvu.jpg",
+                    '2': "https://files.catbox.moe/sq9tvu.jpg",
+                    '3': "https://files.catbox.moe/sq9tvu.jpg",
+                    '4': "https://files.catbox.moe/sq9tvu.jpg",
+                    '5': "https://files.catbox.moe/sq9tvu.jpg",
+                    '6': "https://files.catbox.moe/sq9tvu.jpg",
+                    '7': "https://files.catbox.moe/sq9tvu.jpg",
+                    '8': "https://files.catbox.moe/sq9tvu.jpg",
+                    '9': "https://files.catbox.moe/sq9tvu.jpg",
+                    '10': "https://files.catbox.moe/sq9tvu.jpg",
+                    '11': "https://files.catbox.moe/sq9tvu.jpg",
+                    '12': "https://files.catbox.moe/sq9tvu.jpg",
+                    '13': "https://files.catbox.moe/sq9tvu.jpg"
+                };
+
+                const selectedMenu = `menu${messageType}`;
+                if (menus[selectedMenu]) {
+                    await conn.sendMessage(from, {
+                        image: { url: menuImages[messageType] || "https://i.ibb.co/zwhqLSQ/20250406-120212.jpg" },
+                        caption: menus[selectedMenu],
+                        contextInfo: {
+                            mentionedJid: ['94762858448@s.whatsapp.net'],
+                            groupMentions: [],
+                            forwardingScore: 1,
+                            isForwarded: true,
+                            forwardedNewsletterMessageInfo: {
+                                newsletterJid: '120363417070951702@newsletter',
+                                newsletterName: "🎬 𝐌𝐎𝐕𝐈𝐄 𝐂𝐈𝐑𝐂𝐋𝐄 🎬",
+                                serverMessageId: 999
+                            }
+                        }
+                    }, { quoted: mek });
+                } else {
+                    await conn.sendMessage(from, {
+                        text: "*❌ Invalid Option!*\nPlease reply with a number between 1 and 13.",
+                        contextInfo: {
+                            mentionedJid: [sender]
+                        }
+                    }, { quoted: supunwa });
+                }
+            }
+        });
+
+    } catch (e) {
+        console.error("Error:", e);
+        reply(`*Oops! Something went wrong:*\n${e.message || e}`);
+    }
+}); 
+const botname = "KAVI MD"; //add your name
+ const ownername = "Kavidu Rasanga"; // add your name
+ const Supunwa = { 
+ key: { 
+  remoteJid: 'status@broadcast', 
+  participant: '0@s.whatsapp.net' 
+   }, 
+message:{ 
+  newsletterAdminInviteMessage: { 
+    newsletterJid: '120363417070951702@newsletter', //add your channel jid
+    newsletterName: "MOVIE CIRCLE", //add your bot name
+    caption: botname + ` Verified By ` + ownername, 
+    inviteExpiration: 0
+  }
+ }
+ }
