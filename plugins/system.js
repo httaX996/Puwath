@@ -14,8 +14,8 @@ const Supunwa = {
     },
     message: {
         newsletterAdminInviteMessage: {
-            newsletterJid: '', // your WhatsApp Channel ID
-            newsletterName: "", // Your bot/channel name
+            newsletterJid: '120363417070951702', // your WhatsApp Channel ID
+            newsletterName: "MOVIE CIRCLE", // Your bot/channel name
             caption: botname + ` 𝚅𝙴𝚁𝙸𝙵𝙸𝙴𝙳 𝙱𝚈 ` + ownername,
             inviteExpiration: 0
         }
