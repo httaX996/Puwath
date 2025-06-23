@@ -45,4 +45,5 @@ DELETEMSGSENDTO: process.env.DELETEMSGSENDTO === undefined ? '' : process.env.DE
 INBOX_BLOCK: process.env.INBOX_BLOCK || "false",
 AUTO_STATUS_REACT: process.env.AUTO_STATUS_REACT || "true",
 AUTO_STATUS_REPLY: process.env.AUTO_STATUS_REPLY || "true",
+LANGUAGE: process.env.LANGUAGE || "sinhala",
 };
