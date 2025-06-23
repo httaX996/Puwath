@@ -50,7 +50,7 @@ async (conn, mek, m, { from, q, reply }) => {
 🌫️ *Description*: ${data.weather[0].description}
 💨 *Wind Speed*: ${data.wind.speed} m/s
 🔽 *Pressure*: ${data.main.pressure} hPa
-
+${config.BOT_NAME}
 > *ᴘᴏᴡᴇʀᴅ ʙʏ ᴋᴀᴠɪᴅᴜ ʀᴀꜱᴀɴɢᴀ : )*
 `;
 
