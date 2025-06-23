@@ -36,33 +36,29 @@ const { File } = require('megajs')
  const prefix = ('.')
 
 // Owner Number
-const ownerNumber = ['94727163302']
+const ownerNumber = ['94774391560']
 
 // Session ID Handling
-if (!fs.existsSync(__dirname + '/session/creds.json')) {
-    if (!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!');
-    const sessdata = config.SESSION_ID;
-    const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
-    filer.download((err, data) => {
-    if (err) throw err
-    fs.writeFile(__dirname + '/session/creds.json', data, () => {
-    console.log("Session downloaded ✅");
-    })})}
+//===================SESSION-AUTH============================
+if (!fs.existsSync(__dirname + '/sessions/creds.json')) {
+if(!config.SESSION_ID) return console.log('Please add your session to SESSION_ID env !!')
+const sessdata = config.SESSION_ID.replace("KAVI MD~", '');
+const filer = File.fromURL(`https://mega.nz/file/${sessdata}`)
+filer.download((err, data) => {
+if(err) throw err
+fs.writeFile(__dirname + '/sessions/creds.json', data, () => {
+console.log("SESSION DOWNLOADED COMPLETED ✅")
+})})}
 
 const express = require("express");
 const app = express();
-const port = process.env.PORT || 8000;
+const port = process.env.PORT || 9090;
+
 
 async function connectToWA() {
-const connectDB = require('./lib/mongodb')
- connectDB()
- const { readEnv } = require('./lib/database')
- const config = await readEnv()
-
-
- console.log("Connecting wa bot 🧬...");
- const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/session/')
- var { version } = await fetchLatestBaileysVersion()
+console.log("CONNECTING KAVI-MD 🔖..");
+const { state, saveCreds } = await useMultiFileAuthState(__dirname + '/sessions/')
+var { version } = await fetchLatestBaileysVersion()
 
 const conn = makeWASocket({
         logger: P({ level: 'silent' }),
@@ -71,31 +67,36 @@ const conn = makeWASocket({
         syncFullHistory: true,
         auth: state,
         version
-    })
+        })
+    
+conn.ev.on('connection.update', (update) => {
+const { connection, lastDisconnect } = update
+if (connection === 'close') {
+if (lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut) {
+connectToWA()
+}
+} else if (connection === 'open') {
+console.log('♻️ INSTALLING PLUGINS FILES PLEASE WAIT... 🪄')
+const path = require('path');
+fs.readdirSync("./plugins/").forEach((plugin) => {
+if (path.extname(plugin).toLowerCase() == ".js") {
+require("./plugins/" + plugin);
+}
+});
+console.log('PLUGINS FILES INSTALL SUCCESSFULLY ✅')
+console.log('KAVI-MD CONNECTED TO WHATSAPP ENJOY ✅')
 
-    conn.ev.on('connection.update', (update) => {
-        const { connection, lastDisconnect } = update
-        if (connection === 'close') {
-            if (lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut) {
-                connectToWA()
-            }
-        } else if (connection === 'open') {
-            console.log('😼 Installing... ')
-            const path = require('path');
-            fs.readdirSync("./plugins/").forEach((plugin) => {
-                if (path.extname(plugin).toLowerCase() === ".js") {
-                    require("./plugins/" + plugin);
-                }
-            });
-            console.log('​LOD-✗-MD installed successful ✅')
-            console.log('​LOD-✗-MD  connected to whatsapp ✅')
-            let up = `*​LOD-✗-MD -ᴍᴅ ᴄᴏɴɴᴇᴄᴛᴇᴅ ꜱᴜᴄᴄᴇꜱꜱꜰᴜʟʏ ✅*\n\n📚 _ᴛʏᴘᴇ *.menu* ᴀɴᴅ ɢᴇᴛ ​LOD-✗-MD ᴄᴏᴍᴍᴀɴᴅ ʟɪꜱᴛ_\n\n🧑🏻‍💻 _ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴄᴏɴᴛᴀᴄᴛ ꜱᴜᴘᴏʀᴛᴇᴅ ᴛʏᴘᴇ *.owner* ᴄᴏᴍᴍᴀɴᴅ_\n\n⚘ _ꜰᴏʟʟᴏᴡ ᴛʜᴇ ​LOD-✗-MD ᴜᴘᴅᴀᴛᴇꜱ ᴄʜᴀɴᴇʟ ᴛᴏ ꜱᴇᴇ ​LOD-✗-MD ᴍᴅ ɴᴇᴡ ᴜᴘᴅᴀᴛᴇꜱ_\n\n❗ *ᴛʜɪꜱ ʙᴏᴛ ᴀᴄᴛɪᴠᴇ ꜱᴇᴇ ᴛʜᴇ ʙᴜᴛ ɪᴛ ꜱ  ɴᴏᴛ ᴡᴏʀᴋɪɴɢ ᴏɴ ᴄᴏᴍᴍᴀɴᴅꜱ ᴄʜᴀɴɢᴇ ꜱᴇꜱꜱɪᴏɴ ɪᴅ ᴀɴᴅ ʀᴇᴅᴇᴘʟᴏʏ*\n\n> 🐥𝐏𝐎𝐖𝐄𝐑𝐃 𝐁𝐘 𝐋𝐎𝐃-𝐗-𝐌𝐃`;
-            conn.sendMessage(ownerNumber + "@s.whatsapp.net", {
-                image: { url: `https://i.ibb.co/qMGrGP2s/d08df2dd883986af.jpg` },
-                caption: up
-            })
-        }
-    })
+let up = `*╭──────────────●●►*
+> *➺ KAVI-MD ᴄᴏɴɴᴇᴄᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʏ ᴛʏᴘᴇ .ᴍᴇɴᴜ ᴛᴏ ᴄᴏᴍᴍᴀɴᴅ ʟɪsᴛ ᴄʀᴇᴀᴛᴇᴅ ʙʏ Kavidu Rasanga ✅*
+
+
+*YOUR BOT ACTIVE NOW ENJOY♥️🪄*\n\n*PREFIX: ${prefix}*
+
+*╰──────────────●●►*`;
+conn.sendMessage(conn.user.id, { image: { url: config.MENU_IMG }, caption: up })
+
+}
+})
 
     conn.ev.on('creds.update', saveCreds)
 
