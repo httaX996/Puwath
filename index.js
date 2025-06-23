@@ -86,13 +86,19 @@ require("./plugins/" + plugin);
 console.log('PLUGINS FILES INSTALL SUCCESSFULLY ✅')
 console.log('KAVI-MD CONNECTED TO WHATSAPP ENJOY ✅')
 
-let up = `*╭──────────────●●►*
-> *➺ KAVI-MD ᴄᴏɴɴᴇᴄᴛᴇᴅ sᴜᴄᴄᴇssғᴜʟʏ ᴛʏᴘᴇ .ᴍᴇɴᴜ ᴛᴏ ᴄᴏᴍᴍᴀɴᴅ ʟɪsᴛ ᴄʀᴇᴀᴛᴇᴅ ʙʏ Kavidu Rasanga ✅*
+let up = `
+*❌ NOT CONNECTED KAVI-MD ❌*
+😁 Just Kidding 😁
 
+🪄 KAVI - MD CONNECTED SUCCESSFUL ✅
 
-*YOUR BOT ACTIVE NOW ENJOY♥️🪄*\n\n*PREFIX: ${prefix}*
+🫧 Type .menu For Get Bot Command ✨
 
-*╰──────────────●●►*`;
+*YOUR BOT ACTIVE NOW ENJOY♥️🪄*
+*PREFIX: ${prefix}*
+
+> ᴘᴏᴡᴇʀᴇᴅ ʙʏ ᴋᴀᴠɪᴅᴜ ʀᴀꜱᴀɴɢᴀ  : )
+*⚚⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚊⚚*`;
 conn.sendMessage(conn.user.id, { image: { url: config.MENU_IMG }, caption: up })
 
 }
