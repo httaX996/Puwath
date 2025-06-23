@@ -38,7 +38,7 @@ let status = `
 ┃
 ┃❖ *Owner:* *Kavidu Rasanga*
 ╰╶━━━━━━━━━━━━━━━━━━━━◆➤`
-  return await conn.sendMessage(from, { text: weather }, { quoted: Supunwa }); // ✅ Use custom quoted
+  return await conn.sendMessage(from, { text: system }, { quoted: Supunwa }); // ✅ Use custom quoted
 
 
 }catch(e){
