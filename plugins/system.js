@@ -39,7 +39,7 @@ async (conn, mek, m, {
 ┃
 ┃❖ *RAM Usage:* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${(os.totalmem() / 1024 / 1024).toFixed(2)}MB
 ┃
-┃❖ *Host Name:* ${os.hostname()}
+┃❖ *Bot Name:* ${config.BOT_NAME}
 ┃
 ┃❖ *Owner:* Kavidu Rasanga 
 ╰╶━━━━━━━━━━━━━━━━━━━━◆➤`;
