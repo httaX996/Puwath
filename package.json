@@ -9,8 +9,8 @@
     "restart": "pm2 restart KAVI-MD"
   },
   "dependencies": {
-    "@adiwajshing/keyed-db": "^0.2.4",
-    "@whiskeysockets/baileys": "npm:manul-ofc-baileys",
+    "@whiskeysockets/baileys": "npm:asitha-baliyes-new",
+    "@adiwajshing/keyed-db": "latest",
     "@dark-yasiya/yt-dl.js": "latest",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "@vitalets/google-translate-api": "^9.2.0",
