@@ -76,11 +76,11 @@ async (conn, mek, m, { from, quoted, body, isCmd, command, args, q, isGroup, sen
 
 ✍🏻 ${news.description || 'නොදන්නා'}
 
-📆 ${news.time || 'නොදන්නා'}
-*🔗read more:* ${news.news_url || 'නොදන්නා'}
+*📆 ${news.time || 'නොදන්නා'}*
+*© sinhala.adaderana.lk*
 
 ━━━━━━━━━━━━━━━━━━━━━
-> *🪀Follow us more👇🏻*
+> *🪀Follow Us Get Latest News👇🏻*
 > https://whatsapp.com/channel/0029VbB7y6yHgZWlCfhxup1b
 
 > © 𝐒𝐈𝐍𝐇𝐀𝐋𝐀 𝐍𝐄𝐖𝐒 𝟐𝟒𝐱𝟕"📰⚡
